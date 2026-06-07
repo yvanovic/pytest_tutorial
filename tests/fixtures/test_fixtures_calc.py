@@ -14,7 +14,8 @@ def calculator_fixture():
 def test_add(calculator):
     """Test the add method of the Calculator class"""
 
-    assert calculator.add(2, 3) == 4
+    assert calculator.add(2, 3) == 5
+
 
 @pytest.mark.skip(reason="Not implemented yet")
 def test_subtract(calculator):
@@ -22,22 +23,21 @@ def test_subtract(calculator):
 
     assert calculator.subtract(5, 2) == 3
 
+
 @pytest.mark.slow
 def test_multiply(calculator):
     """Test the multiply method of the Calculator class"""
 
     assert calculator.multiply(4, 3) == 12
 
+
 def test_divide(calculator):
-    """ Test the divide method of the Calculator class"""
+    """Test the divide method of the Calculator class"""
     assert calculator.divide(6, 2) == 3
+
+
 @pytest.mark.slow
 def test_divide_by_zero(calculator):
     """Test the divide method of the Calculator class"""
     with pytest.raises(ZeroDivisionError):
         calculator.divide(5, 0)
-
-
-def test_add_fixture(calculator):
-    """Test the add method of the Calculator class"""
-    assert calculator.add(4, 3) == 7

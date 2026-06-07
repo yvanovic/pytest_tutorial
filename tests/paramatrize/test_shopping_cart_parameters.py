@@ -29,7 +29,16 @@ def test_apply_discount_calculation(cart, percentage, original_total, expected_t
     assert discounted == expected_total
 
 
-@pytest.mark.parametrize("item, price",[("Apple",1.5,),("Banana", 2.5)])
+@pytest.mark.parametrize(
+    "item, price",
+    [
+        (
+            "Apple",
+            1.5,
+        ),
+        ("Banana", 2.5),
+    ],
+)
 def test_add_item(cart, item, price):
     """Test adding an item to the shopping cart"""
     cart.add_item(item, price)

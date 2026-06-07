@@ -1,26 +1,9 @@
 """
 Docstring for tests.test_shopping_cart
+Using fixtures defined in the conftest.py file
 """
 
 import pytest
-
-from source.shopping_cart import ShoppingCart
-
-
-# @pytest.fixture(name="cart")
-# # "cart" is the name of the fixture defined below,
-# # it will be passed as an argument to the test function
-# def shopping_cart_fixture():
-#     """Fixture that returns an instance of the ShoppingCart class"""
-#     return ShoppingCart()
-#
-#
-# @pytest.fixture(name="pre_filled_cart")
-# def pre_filled_cart_fixture(cart):
-#     """Fixture that returns a pre-filled instance of the ShoppingCart class"""
-#     cart.add_item("Apple", 1.5)
-#     cart.add_item("Banana", 2.5)
-#     return cart
 
 
 def test_add_item(cart):
@@ -82,12 +65,14 @@ def test_discount(pre_filled_cart):
     discount = pre_filled_cart.apply_discount(50)
     assert discount == 5
 
+
 def test_apply_discount_no_discount(pre_filled_cart):
     """Test applying discount without discount"""
     pre_filled_cart.add_item("Mango", 6)
     original_total = pre_filled_cart.get_total()
     discount = pre_filled_cart.apply_discount(0)
     assert discount == original_total
+
 
 def test_apply_discount_invalid_percentage(cart):
     """Test applying discount with an invalid percentage"""

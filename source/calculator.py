@@ -5,6 +5,7 @@ Docstring for exercises.fixtures_basic_1
 
 class Calculator:
     """A simple calculator class with basic arithmetic operations"""
+
     @staticmethod
     def add(a, b):
         """Return the sum of a and b"""

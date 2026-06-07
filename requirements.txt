@@ -1,2 +1,9 @@
-pytest==7.4.4
-requests==2.32.5
+# Core test framework
+pytest==9.0.3
+requests==2.34.2
+
+# Linting & formatting (dev quality gates)
+black==26.5.1
+isort==8.0.1
+flake8==7.3.0
+flake8-bugbear==25.11.29

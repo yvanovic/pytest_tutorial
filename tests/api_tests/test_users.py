@@ -1,5 +1,3 @@
-import pytest
-
 class TestUsers:
 
     def test_get_all_users(self, api_session, base_url):
@@ -18,7 +16,7 @@ class TestUsers:
         assert data["address"]["city"] == "Gwenborough"
 
     def test_user_not_found(self, api_session, base_url):
-        response =  api_session.get(f"{base_url}/users/1000")
+        response = api_session.get(f"{base_url}/users/1000")
         assert response.status_code == 404
 
     def test_user_geo_values(self, api_session, base_url):

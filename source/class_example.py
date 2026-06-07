@@ -12,10 +12,9 @@ class ShoppingCart:
             if item[0] == item_name:
                 self.items.remove(item)
                 break
+
     def calculate_total(self):
         total = 0
         for item in self.items:
             total += item[1]
-        return  total
-
-
+        return total
