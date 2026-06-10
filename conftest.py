@@ -15,7 +15,7 @@ BASE_URL = "https://jsonplaceholder.typicode.com"
 # it will be passed as an argument to the test function
 def shopping_cart_fixture():
     """Fixture that returns an instance of the ShoppingCart class"""
-    return ShoppingCart()
+    yield ShoppingCart()
 
 
 @pytest.fixture(name="pre_filled_cart")
@@ -23,13 +23,13 @@ def pre_filled_cart_fixture(cart):
     """Fixture that returns a pre-filled instance of the ShoppingCart class"""
     cart.add_item("Apple", 1.5)
     cart.add_item("Banana", 2.5)
-    return cart
+    yield cart
 
 
 @pytest.fixture(scope="session")
 def base_url():
     """Fixture that returns the base url for all tests"""
-    return BASE_URL
+    yield BASE_URL
 
 
 @pytest.fixture(scope="session")
